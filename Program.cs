@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Proiect_Daniela.Data;
 using System;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,9 @@ builder.Services.AddDbContext<DanielaDbContext>(options =>
 
 // injectam dbcontext class in interiorul programului
 options.UseSqlServer(builder.Configuration.GetConnectionString("DanielaConnectionString")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<DanielaDbContext>();
 
 var app = builder.Build();
 
@@ -26,6 +30,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 

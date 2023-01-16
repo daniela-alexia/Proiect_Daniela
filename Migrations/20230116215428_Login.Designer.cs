@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proiect_Daniela.Data;
 
@@ -11,9 +12,11 @@ using Proiect_Daniela.Data;
 namespace ProiectDaniela.Migrations
 {
     [DbContext(typeof(DanielaDbContext))]
-    partial class DanielaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230116215428_Login")]
+    partial class Login
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
