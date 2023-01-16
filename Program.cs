@@ -1,10 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Proiect_Daniela.Data;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<DanielaDbContext>();
 
 builder.Services.AddDbContext<DanielaDbContext>(options => 
 
