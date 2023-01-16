@@ -7,8 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<DanielaDbContext>();
-
 builder.Services.AddDbContext<DanielaDbContext>(options => 
 
 // injectam dbcontext class in interiorul programului

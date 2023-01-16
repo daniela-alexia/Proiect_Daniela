@@ -5,8 +5,8 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Cautare</h1>
+    
 </div>
 
 <form method="post" class="searchForm">
@@ -17,9 +17,25 @@
 
 @foreach (var angajat in Model.Angajati)
 {
-    <p>@angajat.Name</p>
-    <p>@angajat.Email</p>
-    <br />
-    <br />
-    <br />
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nume</th>
+            <th>Email</th>
+            <th>Departament</th>
+            <th>Salariu</th>
+            <th>Data Nasterii</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@angajat.Name</td>
+                <td>@angajat.Email</td>
+                <td>@angajat.Department</td>
+                <td>@angajat.Salary</td>
+                <td>@angajat.DateOfBirth</td>
+            </tr>
+        </tbody>
+    </table>
+
 }
