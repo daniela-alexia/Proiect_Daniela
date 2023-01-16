@@ -1,0 +1,48 @@
+﻿@page
+@model Proiect_Daniela.Pages.Angajati.AddModel
+@{
+	var message = ViewData["Message"]?.ToString();
+}
+	<form method="post">
+
+	<h1 class="mb-3"> Adaugare Angajati</h1>
+
+	@if(!string.IsNullOrWhiteSpace(message))
+	{
+		<div class="alert alert-success" role="alert">
+			@message
+		</div>
+	}
+
+	<div class="mb-3">
+	 <label class="from-label"> Nume</label>
+	 <input type="text" class="form-control" asp-for="AddEmployeeRequest.Name"/>
+	</div>
+
+	<div class="mb-3">
+	 <label class="from-label"> Email</label>
+			<input type="email" class="form-control" asp-for="AddEmployeeRequest.Email
+" />
+	</div>
+
+	<div class="mb-3">
+		<label class="from-label">Salariu</label>
+			<input type="number" class="form-control" asp-for="AddEmployeeRequest.Salary" />
+	</div>
+
+	<div class="mb-3">
+		<label class="from-label">Data Nasterii</label>
+			<input type="date" class="form-control" asp-for="AddEmployeeRequest.DateOfBirth" />
+	</div>
+
+	<div class="mb-3">
+		<label class="from-label">Departament</label>
+			<input type="text" class="form-control" asp-for="AddEmployeeRequest.Department" />
+	</div>
+
+	<div class="mb-3">
+		<button type="submit" class="btn btn-primary">Salveaza </button>
+	</div>
+
+	</form>
+

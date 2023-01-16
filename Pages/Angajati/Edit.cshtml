@@ -1,0 +1,47 @@
+﻿@page "{id:Guid}"
+@model Proiect_Daniela.Pages.Angajati.EditModel
+@{
+  var message = ViewData["Message"]?.ToString();
+}
+
+<form method="post">
+<h1 class="mb-3">Editare Angajat</h1>
+
+@if(!string.IsNullOrWhiteSpace(message)){
+	<div class="alert alert-success" role="alert">
+		@message
+	</div>
+}
+<div class="mb-3">
+	<label class="from-label"> Id</label>
+	<input type="text" class="form-control" asp-for="EditareAngajatViewModel.Id" readonly />
+</div>
+
+<div class="mb-3">
+	<label class="from-label"> Nume </label>
+	<input type="text" class="form-control" asp-for="EditareAngajatViewModel.Name"  />
+</div>
+
+<div class="mb-3">
+	<label class="from-label">Email</label>
+	<input type="email" class="form-control" asp-for="EditareAngajatViewModel.Email"  />
+</div>
+
+<div class="mb-3">
+	<label class="from-label">Salariu</label>
+	<input type="number" class="form-control" asp-for="EditareAngajatViewModel.Salary"  />
+</div>
+<div class="mb-3">
+	<label class="from-label">Data Nasteri</label>
+	<input type="date" class="form-control" asp-for="EditareAngajatViewModel.DateOfBirth"  />
+</div>
+<div class="mb-3">
+	<label class="from-label">Departament</label>
+	<input type="text" class="form-control" asp-for="EditareAngajatViewModel.Department"  />
+</div>
+
+<div class="mb-3 d-flex justify-content-between">
+		<button type="submit" class="btn btn-primary" asp-page-handler="Update">Editeaza</button>
+	<button type="submit" class="btn btn-danger" asp-page-handler="Delete">Sterge</button>
+</div>
+</form>
