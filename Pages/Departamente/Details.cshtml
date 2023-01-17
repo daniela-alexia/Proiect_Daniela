@@ -27,12 +27,12 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Departament.NumarAngajati)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10" style="margin-bottom:10px">
             @Html.DisplayFor(model => model.Departament.NumarAngajati)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" class="btn btn-dark" asp-route-id="@Model.Departament?.ID">Editeaza</a> |
+    <a asp-page="./Edit" class="btn btn-dark" style="margin-bottom:10px" asp-route-id="@Model.Departament?.ID">Editeaza</a> |
     <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
 </div>
