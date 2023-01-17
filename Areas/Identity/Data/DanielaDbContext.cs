@@ -24,5 +24,9 @@ namespace Proiect_Daniela.Data
         // utilizat de migrari ca sa construiasca un nou tabel
         // in baza de date in caz ca nu exista
         public DbSet <Angajat> Angajati { get; set; }
+
+        // utilizat de migrari ca sa construiasca un nou tabel
+        // in baza de date in caz ca nu exista
+        public DbSet<Proiect_Daniela.Models.Domain.Departament> Departament { get; set; }
     }
 }
